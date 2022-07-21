@@ -29,7 +29,7 @@ const relevantEvents = new Set([
     'customer.subscription.deleted',
 ])
 
-export default async(req: NextApiRequest, res: NextApiResponse) => {
+const webhooksApi = async(req: NextApiRequest, res: NextApiResponse) => {
 
     if(req.method === 'POST'){
         const buf = await buffer(req)
@@ -93,3 +93,5 @@ export default async(req: NextApiRequest, res: NextApiResponse) => {
 
     }
 }
+
+export default webhooksApi;
